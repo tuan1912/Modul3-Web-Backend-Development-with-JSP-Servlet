@@ -14,8 +14,8 @@ public class ProductDAOImpl implements IProductDAO{
     private static final String INSERT_PRODUCT_SQL = "INSERT INTO product" + "  (name,  price,  quantity,  color,  description, categoryId) VALUES " +
             " (?, ?, ?, ?, ?, ?);";
 
-    private static final String SELECT_PRODUCT_BY_ID = "select id,name,email,country from users where id =?";
-    private static final String SELECT_ALL_PRODUCT = "select * from product";
+    private static final String SELECT_PRODUCT_BY_ID = "select * from product where id =?";
+    private static final String SELECT_ALL_PRODUCT = "select * from product;";
     private static final String DELETE_PRODUCT_SQL = "delete from product where id = ?;";
     private static final String UPDATE_PRODUCT_SQL = "update product set name= ?,  price= ?,  quantity= ?,  color= ?,  description= ?, categoryId= ? where id = ?;";
     public ProductDAOImpl(){
@@ -153,7 +153,6 @@ public class ProductDAOImpl implements IProductDAO{
         }
         return rowDeleted;
     }
-
 
 
 }

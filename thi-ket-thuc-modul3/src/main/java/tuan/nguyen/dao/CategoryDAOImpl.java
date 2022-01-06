@@ -11,8 +11,8 @@ public class CategoryDAOImpl implements ICategoryDAO {
     private String jdbcURL = "jdbc:mysql://localhost:3306/quanlysanpham?characterEncoding=UTF8";
     private String jdbcUsername = "root";
     private String jdbcPassword = "12345678";
-    public static String SELECT_ALL_CATEGORY = "seclect * from category;";
-    public static String SELECT_CATEGORY = "seclect * from category where id = ?;";
+    public static String SELECT_ALL_CATEGORY = "select * from category;";
+    public static String SELECT_CATEGORY = "select * from category where id = ?;";
 
     public CategoryDAOImpl(){
 

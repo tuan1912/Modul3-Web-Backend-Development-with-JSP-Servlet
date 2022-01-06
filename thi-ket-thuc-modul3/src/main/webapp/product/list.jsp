@@ -12,6 +12,7 @@
     <title>list</title>
 </head>
 <body>
+<a href="/product?action=create">CREATE NEW PRODUCT</a>
 <table border="1" cellpadding="5">
     <caption><h2>List of Users</h2></caption>
     <tr>
@@ -24,18 +25,19 @@
         <th>Category</th>
         <th>Action</th>
     </tr>
-    <c:forEach var="i" begin = "0" end="${products.size()-1}" >
+    <c:forEach var="i" begin = "0" end="${products.size()-1}"  >
         <tr>
-            <td><c:out value="${products.get(i).id}"/></td>
+            <td><c:out value="${i}"/></td>
             <td><c:out value="${products.get(i).name}"/></td>
             <td><c:out value="${products.get(i).price}"/></td>
             <td><c:out value="${products.get(i).quantity}"/></td>
             <td><c:out value="${products.get(i).color}"/></td>
             <td><c:out value="${products.get(i).description}"/></td>
-            <td>${categories.get(i).name}</td>
+            <td><c:out value="${categories.get(i).name}"/></td>
+
             <td>
-                <a href="/users?action=edit&id=${product.id}">Edit</a>
-                <a href="/users?action=delete&id=${product.id}">Delete</a>
+                <a href="/product?action=edit&id=${products.get(i).getId()}">Edit</a>
+                <a href="/product?action=delete&id=${products.get(i).getId()}">Delete</a>
             </td>
         </tr>
     </c:forEach>

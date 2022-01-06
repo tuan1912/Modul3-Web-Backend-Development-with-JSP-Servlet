@@ -8,8 +8,19 @@ public class Product {
     String color;
     String description;
     int categoryId;
+    public Product(){
 
-    public Product(int id, String name, int price, int quantity, String color, String description, int categoryId) {
+    }
+    public Product( String name, int price, int quantity, String color, String description, int categoryId) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+        this.color = color;
+        this.description = description;
+        this.categoryId = categoryId;
+    }
+    public Product( int id,String name, int price, int quantity, String color, String description, int categoryId) {
         this.id = id;
         this.name = name;
         this.price = price;
