@@ -14,7 +14,7 @@ public class CategoryDAOImpl implements ICategoryDAO {
     public static String SELECT_ALL_CATEGORY = "seclect * from category;";
     public static String SELECT_CATEGORY = "seclect * from category where id = ?;";
 
-    CategoryDAOImpl(){
+    public CategoryDAOImpl(){
 
     }
     protected Connection getConnection() {
