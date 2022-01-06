@@ -34,8 +34,13 @@
             <td><input type="text" id="color" name="color" value="${product.color}"></td>
         </tr>
         <tr>
-            <td><label for="description">Description:</label></td>
-            <td><input type="text" id="description" name="description" value="${product.name}"></td>
+
+<%--            <c:if test="${product.description = null}">--%>
+<%--                <td><label for="description1">Description:</label></td>--%>
+<%--                <td><input type="text" id="description1" name="description" value="${product.name}"></td>--%>
+<%--            </c:if>--%>
+            <td><label for="description2">Description:</label></td>
+            <td><input type="text" id="description2" name="description" value="${product.description}"></td>
         </tr>
         <tr>
             <td>Category</td>

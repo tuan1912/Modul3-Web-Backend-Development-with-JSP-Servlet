@@ -44,10 +44,7 @@ public class ProductServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
         boolean isDelete = productDAO.deleteProduct(id);
         System.out.println(isDelete);
-        List<Product> products = productDAO.selectAllProducts();
-        req.setAttribute("products", products);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("product/list.jsp");
-        requestDispatcher.forward(req,resp);
+        resp.sendRedirect("/product");
     }
 
     private void updateProduct(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
@@ -60,11 +57,7 @@ public class ProductServlet extends HttpServlet {
         int categoryId = Integer.parseInt(req.getParameter("category"));
         Product changeProduct = new Product(id,name, price, quantity,color,description,categoryId);
         productDAO.updateProduct(changeProduct);
-        List<Product> products ;
-        products = productDAO.selectAllProducts();
-        req.setAttribute("products",products);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("product/list.jsp");
-        dispatcher.forward(req, resp);
+        resp.sendRedirect("/product");
 
     }
 
@@ -77,11 +70,7 @@ public class ProductServlet extends HttpServlet {
         int categoryId = Integer.parseInt(req.getParameter("category"));
         Product newProduct = new Product(name, price, quantity,color,description,categoryId);
         productDAO.insertProduct(newProduct);
-        List<Product> products ;
-        products = productDAO.selectAllProducts();
-        req.setAttribute("products",products);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("product/list.jsp");
-        dispatcher.forward(req, resp);
+        resp.sendRedirect("/product");
     }
 
 

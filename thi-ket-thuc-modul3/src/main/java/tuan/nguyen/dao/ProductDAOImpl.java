@@ -73,7 +73,11 @@ public class ProductDAOImpl implements IProductDAO{
                 int price = rs.getInt("price");
                 int quantity = rs.getInt("quantity");
                 String color = rs.getString("color");
-                String description = rs.getString("description");
+                String description;
+                if(rs.getString("description")!=null){
+                    description = rs.getString("description");
+                }else description ="ahihi";
+
                 int categoryId = rs.getInt("categoryId");
                 products.add(new Product(id, name,  price,  quantity,  color,  description, categoryId));
             }
@@ -117,7 +121,11 @@ public class ProductDAOImpl implements IProductDAO{
                 int price = rs.getInt("price");
                 int quantity = rs.getInt("quantity");
                 String color = rs.getString("color");
-                String description = rs.getString("description");
+                String description;
+                if(rs.getString("description")!=null){
+                    description = rs.getString("description");
+                }else description ="ahihi";
+
                 int categoryId = rs.getInt("categoryId");
                 product = new Product(id, name,  price,  quantity,  color,  description, categoryId);
             }
